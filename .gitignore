@@ -1,0 +1,13 @@
+Classes/
+ConfigFiles/
+ExampleJsons/
+Test/
+noclone.ps1
+UpdateModule.sh
+TODO.md
+TemplateCreationAzure.json
+Main.ps1
+Import.ps1
+Functions.ps1
+CreatePanels.ps1
+CreateDashboardInGrafana.ps1
