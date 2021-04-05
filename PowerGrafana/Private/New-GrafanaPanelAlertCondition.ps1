@@ -1,4 +1,4 @@
-function New-PanelAlertCondition {
+function New-GrafanaPanelAlertCondition {
     param (
         [int[]]$evaluatorParams = @(200),
         [string]$evaluatorType = "gt",

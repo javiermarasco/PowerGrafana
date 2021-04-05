@@ -1,4 +1,4 @@
-function New-PanelAlert {
+function New-GrafanaPanelAlert {
     param(
     [hashtable]$alertRuleTags = @{},
     [PSTypeName('PowerGrafana.PanelAlertCondition')]

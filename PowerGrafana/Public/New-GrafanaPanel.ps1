@@ -12,7 +12,7 @@ function New-GrafanaPanel {
         [int]$fill = 1,
         [int]$fillGradient = 0,
         [PSTypeName('PowerGrafana.PanelGridPos')]
-        [hashtable]$gridPos =(New-PanelGridPos),
+        [hashtable]$gridPos = (New-PanelGridPos),
         [bool]$hiddenSeries = $false,
         [int]$id = 0,
         [PSTypeName('PowerGrafana.PanelLegend')]
@@ -45,10 +45,10 @@ function New-GrafanaPanel {
         [PSTypeName('PowerGrafana.PanelXAxis')]
         [hashtable]$xaxis = (New-PanelXAxis),
         [PSTypeName('PowerGrafana.PanelYAxes')]
-        [hashtable[]]$yaxes = @($(New-PanelYAxes),$(New-PanelYAxes) ),
+        [hashtable[]]$yaxes = @($(New-PanelYAxes), $(New-PanelYAxes) ),
         [PSTypeName('PowerGrafana.PanelYAxis')]
         [hashtable]$yaxis = (New-PanelYAxis),
-        [Parameter(Mandatory=$true)]$Dashboard
+        [Parameter(Mandatory = $true)]$Dashboard
     )
     begin {
         $Panel = @{
@@ -94,11 +94,11 @@ function New-GrafanaPanel {
             yaxes           = $yaxes
             yaxis           = $yaxis
         }
-        if ($null -ne $alert){
-            $Panel += @{"alert" = $alert}
+        if ($null -ne $alert) {
+            $Panel += @{"alert" = $alert }
         }
-        if ($null -ne $targets){
-            $Panel += @{"targets" = $targets}
+        if ($null -ne $targets) {
+            $Panel += @{"targets" = $targets }
         }
 
     }
