@@ -1,13 +1,13 @@
 function New-PanelTargetAzure {
     param (
         [PSTypeName('PowerGrafana.PanelTargetAppInsights')]
-        [hashtable]$appInsights = (New-PanelTargetAppInsights),
+        [hashtable]$appInsights, # = (New-PanelTargetAppInsights),
         [PSTypeName('PowerGrafana.PanelTargetAzureLogAnalytics')]
-        [hashtable]$azureLogAnalytics = (New-PanelTargetAzureLogAnalytics),
+        [hashtable]$logAnalytics, # = (New-PanelTargetAzureLogAnalytics),
         [PSTypeName('PowerGrafana.PanelTargetAzureMonitor')]
-        [hashtable]$azureMonitor, # = (New-PSPanelTargetAzureMonitor),
+        [hashtable]$monitor, # = (New-PSPanelTargetAzureMonitor),
         [PSTypeName('PowerGrafana.PanelTargetInsightsAnalytics')]
-        [hashtable]$insightsAnalytics = (New-PanelTargetInsightsAnalytics),
+        [hashtable]$insightsAnalytics, # = (New-PanelTargetInsightsAnalytics),
         [string]$queryType = "Azure Monitor",
         [string]$refId = ""
         #,        [string]$subscription = ""

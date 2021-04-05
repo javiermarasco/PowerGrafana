@@ -145,7 +145,7 @@ function New-GrafanaPanelTargetAzureMonitor {
             Write-Output "Panel can't have more targets, maximum targets reached."
         }else{
             $NewAzureTarget.refId = $NextAvailableRefId
-            $NewAzureTarget.azureMonitor = $AzureMonitor
+            $NewAzureTarget.monitor = $AzureMonitor
             $PanelTargets += $NewAzureTarget
             $Panel.datasource = $dataSourceName
             if($null -eq $Panel.target){
