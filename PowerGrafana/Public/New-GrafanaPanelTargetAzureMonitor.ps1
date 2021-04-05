@@ -130,7 +130,7 @@ function New-GrafanaPanelTargetAzureMonitor {
 
         # If the panel has targets, we extract them to add the new target
         
-        $PanelFromGrafana = Get-PSPanel -Panel $Panel -Dashboard $Dashboard
+        $PanelFromGrafana = Get-GrafanaPanel -Panel $Panel -Dashboard $Dashboard
         
         if ($null -ne $PanelFromGrafana.targets){
             $PanelTargets = $PanelFromGrafana.targets

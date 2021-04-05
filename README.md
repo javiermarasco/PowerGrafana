@@ -33,28 +33,28 @@ $Datasource = New-AzureDataSource -name "azure" `
 A simple empty dashboard can be created with the following cmdlet
 ``` powershell
 # Create dashboard
-$Dashboard = New-PSDashboard -DashboardName "Dashboard"
+$Dashboard = New-GrafanaDashboard -DashboardName "Dashboard"
 ```
 
 ## Panel management
 
-The addition of panels to a dashboard is done in two steps, first we need to create the panel using `New-PSPanel` and then we need to add the panel to the dashboard using `Add-PSPanel`. This can be done multiple times when you need multiple panels, but you must run first `New-PSPanel` and then `Add-PSPanel` for each panel.
+The addition of panels to a dashboard is done in two steps, first we need to create the panel using `New-GrafanaPanel` and then we need to add the panel to the dashboard using `Add-GrafanaPanel`. This can be done multiple times when you need multiple panels, but you must run first `New-GrafanaPanel` and then `Add-GrafanaPanel` for each panel.
 
 ```powershell
 # Create an empty panel
-$Panel0 = New-PSPanel -Dashboard $Dashboard
+$Panel0 = New-GrafanaPanel -Dashboard $Dashboard
 
 # Optionally create more panels
-# $Panel1 = New-PSPanel -Dashboard $Dashboard
-# Add-PSPanel -Dashboard $Dashboard -Panel $Panel1
+# $Panel1 = New-GrafanaPanel -Dashboard $Dashboard
+# Add-GrafanaPanel -Dashboard $Dashboard -Panel $Panel1
 
 # Add the panel to the dashboard
-Add-PSPanel -Dashboard $Dashboard -Panel $Panel0
+Add-GrafanaPanel -Dashboard $Dashboard -Panel $Panel0
 ```
 
 ## Target management
 
-To display metrics inside a panel it is needed to create a target, each target is a metric specific item, it means that you will need a target per resource AND per metric that you want to monitor, to create the target you use `New-PSPanelTargetAzureMonitor` and after the target is configured you need to add it to the panel using `Update-PSDashboardPanel`
+To display metrics inside a panel it is needed to create a target, each target is a metric specific item, it means that you will need a target per resource AND per metric that you want to monitor, to create the target you use `New-GrafanaPanelTargetAzureMonitor` and after the target is configured you need to add it to the panel using `Update-GrafanaDashboardPanel`
 
 - DatasourceName is an string, you can provide the value from the creation of the datasource or the name of the datasource if you know it.
 
@@ -62,7 +62,7 @@ To display metrics inside a panel it is needed to create a target, each target i
 
 ```powershell
 # Create a target 
-$PanelWithTarget0 = New-PSPanelTargetAzureMonitor -Panel $Panel0 `
+$PanelWithTarget0 = New-GrafanaPanelTargetAzureMonitor -Panel $Panel0 `
     -Dashboard $Dashboard `
     -resourceGroup "AzureResourceGroup" `
     -resourceName "AzureResourceName" `
@@ -72,22 +72,22 @@ $PanelWithTarget0 = New-PSPanelTargetAzureMonitor -Panel $Panel0 `
     -dataSourceName $Datasource.datasource.name
 
 # Add the target to the panel
-Update-PSDashboardPanel -Panel $PanelWithTarget0 -Dashboard $Dashboard
+Update-GrafanaDashboardPanel -Panel $PanelWithTarget0 -Dashboard $Dashboard
 ```
-In the same way as with panels, if you want to create multiple targets in a single panel it is possible, but you need to run `New-PSPanelTargetAzureMonitor` and then `Update-PSDashboardPanel` for each target that you want to add into the panel.
+In the same way as with panels, if you want to create multiple targets in a single panel it is possible, but you need to run `New-GrafanaPanelTargetAzureMonitor` and then `Update-GrafanaDashboardPanel` for each target that you want to add into the panel.
 
-Keep in mind that there is a maximum of 24 targets per panel, when you reach the maximum the `New-PSPanelTargetAzureMonitor` will fail and let you know you reached the maximum number of targets for the given panel.
+Keep in mind that there is a maximum of 24 targets per panel, when you reach the maximum the `New-GrafanaPanelTargetAzureMonitor` will fail and let you know you reached the maximum number of targets for the given panel.
 
 
 ## Remove dashboards
 
-It is also possible to delete a coplete dashboard, this is simply done by calling `Remove-PSDashboard` and providing the name of the dashboard, this will delete the complete dashboard without asking but will not change any datasource.
+It is also possible to delete a coplete dashboard, this is simply done by calling `Remove-GrafanaDashboard` and providing the name of the dashboard, this will delete the complete dashboard without asking but will not change any datasource.
 
 All alerts defined in the dashboard are gonna be deleted as well.
 
 ```powershell
 # Remove a dashboard
-Remove-PSDashboard -Dashboard $Dashboard
+Remove-GrafanaDashboard -Dashboard $Dashboard
 ```
 
 # TODO

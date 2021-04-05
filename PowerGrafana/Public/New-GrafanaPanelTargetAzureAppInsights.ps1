@@ -14,7 +14,7 @@ function New-GrafanaPanelTargetAzureAppInsights {
         timeGrain = $timeGrain
     }
     $AzureAppInsights.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelTargetAppInsights')
-    $PanelFromGrafana = Get-PSPanel -Panel $Panel -Dashboard $Dashboard
+    $PanelFromGrafana = Get-GrafanaPanel -Panel $Panel -Dashboard $Dashboard
     if ($null -ne $PanelFromGrafana.targets){
         $PanelTargets = $PanelFromGrafana.targets
     }else{

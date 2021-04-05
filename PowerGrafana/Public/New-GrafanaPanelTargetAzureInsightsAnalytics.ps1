@@ -12,7 +12,7 @@ function New-GrafanaPanelTargetAzureInsightsAnalytics {
         resultFormat = $resultFormat
     }
     $insightsAnalytics.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelTargetInsightsAnalytics')
-    $PanelFromGrafana = Get-PSPanel -Panel $Panel -Dashboard $Dashboard
+    $PanelFromGrafana = Get-GrafanaPanel -Panel $Panel -Dashboard $Dashboard
     if ($null -ne $PanelFromGrafana.targets){
         $PanelTargets = $PanelFromGrafana.targets
     }else{

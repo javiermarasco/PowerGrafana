@@ -7,7 +7,7 @@ function Get-NextAvailableRefId {
     $AZ = 'A'..'Z' 
 
     if (![string]::IsNullOrEmpty($Panel)) {
-        $InternalPanel = Get-PSPanel -Panel $Panel -Dashboard $Dashboard
+        $InternalPanel = Get-GrafanaPanel -Panel $Panel -Dashboard $Dashboard
         $PanelsRefIds = $($InternalPanel.targets.RefId | Sort-Object)
         if ($PanelsRefIds.count -gt 25) {
             return -1

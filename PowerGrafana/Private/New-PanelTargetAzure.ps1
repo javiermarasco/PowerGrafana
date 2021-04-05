@@ -5,7 +5,7 @@ function New-PanelTargetAzure {
         [PSTypeName('PowerGrafana.PanelTargetAzureLogAnalytics')]
         [hashtable]$logAnalytics, # = (New-PanelTargetAzureLogAnalytics),
         [PSTypeName('PowerGrafana.PanelTargetAzureMonitor')]
-        [hashtable]$monitor, # = (New-PSPanelTargetAzureMonitor),
+        [hashtable]$monitor, # = (New-PowerPanelTargetAzureMonitor),
         [PSTypeName('PowerGrafana.PanelTargetInsightsAnalytics')]
         [hashtable]$insightsAnalytics, # = (New-PanelTargetInsightsAnalytics),
         [string]$queryType = "Azure Monitor",
