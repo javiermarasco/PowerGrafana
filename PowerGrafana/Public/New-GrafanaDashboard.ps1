@@ -1,11 +1,11 @@
-function New-PSDashboard {
+function New-GrafanaDashboard {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]$DashboardName,
         [Parameter(Mandatory=$false)][string[]]$Tags
     )
-    $URI = Get-URI
-    $Header = New-Header
+    $URI = Get-GrafanaURI
+    $Header = New-GrafanaHeader
     $body = @{
         dashboard = @{
             id            = $null

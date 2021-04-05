@@ -1,4 +1,4 @@
-function Get-PSPanel {
+function Get-GrafanaPanel {
 
     param (
         [Parameter(Mandatory=$true)] [PSTypeName('PowerGrafana.Panel')] $Panel,
@@ -6,8 +6,8 @@ function Get-PSPanel {
     )
 
     if (![string]::IsNullOrEmpty($Panel.id) -and ![string]::IsNullOrEmpty($Dashboard)  ) {
-        $URI = Get-URI
-        $Header = New-Header
+        $URI = Get-GrafanaURI
+        $Header = New-GrafanaHeader
         $RetrievedDashboard = Invoke-RestMethod -Method Get -Headers $Header -Uri $("$URI/api/dashboards/uid/" + $Dashboard.uid)
         if ( $($RetrievedDashboard.dashboard.panels | where-object -property id -eq $Panel.id).count -gt 0) {
             $PanelFound = $RetrievedDashboard.dashboard.panels | where-object -property id -eq $Panel.id

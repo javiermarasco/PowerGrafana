@@ -1,11 +1,11 @@
-function Update-PSDashboardPanel {
+function Update-GrafanaDashboardPanel {
     [CmdletBinding()]
     param (
         [parameter(mandatory=$true)] [PSTypeName('PowerGrafana.Panel')] $Panel,
         [parameter(mandatory=$true)]$Dashboard
     )
-    $URI = Get-URI
-    $Header = New-Header
+    $URI = Get-GrafanaURI
+    $Header = New-GrafanaHeader
 
     try {
         $RetrievedDashboard = Invoke-RestMethod -Method Get -Headers $Header -Uri $("$URI/api/dashboards/uid/" + $Dashboard.uid)

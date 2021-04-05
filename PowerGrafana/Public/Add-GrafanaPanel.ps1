@@ -1,11 +1,11 @@
-function Add-PSPanel{
+function Add-GrafanaPanel{
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]$Dashboard,
         [PSTypeName('PowerGrafana.Panel')][hashtable]$Panel = (New-Panel)
     )
-    $URI = Get-URI
-    $Header = New-Header
+    $URI = Get-GrafanaURI
+    $Header = New-GrafanaHeader
 
     try {
         $checkDashboardExist = Invoke-RestMethod -Method Get -Headers $Header -Uri $("$URI/api/dashboards/uid/" + $Dashboard.uid)

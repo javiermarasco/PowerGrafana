@@ -1,4 +1,4 @@
-function New-PSPanel {
+function New-GrafanaPanel {
     param (
         [PSTypeName('PowerGrafana.PanelAlert')]
         [pscustomobject]$alert = $null,

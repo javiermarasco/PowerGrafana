@@ -1,4 +1,4 @@
-function New-PSPanelTargetAzureMonitor {
+function New-GrafanaPanelTargetAzureMonitor {
     param (
         [parameter(mandatory=$false)][string[]]$aggOptions = 
         @(

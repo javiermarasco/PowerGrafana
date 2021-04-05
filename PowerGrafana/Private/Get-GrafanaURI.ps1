@@ -1,4 +1,4 @@
-function Get-URI {
+function Get-GrafanaURI {
     if ([string]::IsNullOrEmpty($Env:POWERGRAFANA_URI)) {
         throw "POWERGRAFANA_URI environment variable is not defined"
     }

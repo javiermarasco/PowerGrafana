@@ -4,8 +4,8 @@ function Get-NextAvailablePanelId{
     )
     if (![string]::IsNullOrEmpty($Dashboard)) {
         
-        $URI = Get-URI
-        $Header = New-Header
+        $URI = Get-GrafanaURI
+        $Header = New-GrafanaHeader
         $RetrievedDashboard = Invoke-RestMethod -Method Get -Headers $Header -Uri $("$URI/api/dashboards/uid/" + $Dashboard.uid)
 
         if ($null -eq $RetrievedDashboard.dashboard.panels){

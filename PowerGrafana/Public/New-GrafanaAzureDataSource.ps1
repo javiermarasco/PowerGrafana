@@ -1,4 +1,4 @@
-function New-AzureDataSource {
+function New-GrafanaAzureDataSource {
     param(
         [string]$name,
         [string]$appInsightsAppId,
@@ -12,8 +12,8 @@ function New-AzureDataSource {
         [string]$clientSecret,
         [string]$logAnalyticsClientSecret
     )
-    $URI = Get-URI
-    $Header = New-Header
+    $URI = Get-GrafanaURI
+    $Header = New-GrafanaHeader
     $body = @{
         name           = $name
         type           = "grafana-azure-monitor-datasource"
