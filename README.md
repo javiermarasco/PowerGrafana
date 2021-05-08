@@ -1,5 +1,14 @@
 # PowerGrafana
 
+PowerGrafana is a module that will help you manage your grafana dashboards, panels, targets and alerts. The intention is to allow you to manage your grafana environment using simple powershell cmdlets to monitor your infrastructure.
+
+Currently it only supports the following targets:
+*  Azure App Insights
+*  Azure Insights Analytics
+*  Azure Log Analytics
+*  Azure Monitor
+
+More targets will be added in the future.
 # Example
 
 Remember to set up the following in your environment
@@ -94,5 +103,6 @@ Remove-GrafanaDashboard -Dashboard $Dashboard
 
 * Alerts : Alert management needs to be added
 * Notification channels: Add cmdlet to manage the creation and deletion of them.
-
+* Add more targets
+* Improove usage documentation
 
