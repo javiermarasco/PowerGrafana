@@ -12,7 +12,7 @@
 RootModule = 'PowerGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.2'
+ModuleVersion = '0.0.4'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -123,7 +123,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Initial deployment of this module to manage Grafana'
+        ReleaseNotes = 'Added help information into all cmdlets'
 
         # Prerelease string of this module
         # Prerelease = ''
