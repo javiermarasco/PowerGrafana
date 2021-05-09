@@ -1,3 +1,25 @@
+<#
+
+.SYNOPSIS
+Creates a dashboard in Grafana
+
+.DESCRIPTION
+This cmdlet will create an empty dashboard in Grafana that can be used as starting point to create your grafana monitoring.
+
+.PARAMETER DashboardName
+The name of the dasboard in Grafana.
+
+.PARAMETER Tags
+An array of strings that will be used to set tags in the dashboard.
+
+.EXAMPLE
+New-GrafanaDashboard -DashboardName "My new dashboard" -Tags @('Web','Azure','Production')
+
+.NOTES
+
+.LINK
+
+#>
 function New-GrafanaDashboard {
     [CmdletBinding()]
     param (
