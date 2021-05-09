@@ -1,3 +1,25 @@
+<#
+
+.SYNOPSIS
+Replaces a Panel in a Dashboard.
+
+.DESCRIPTION
+This cmdlet can be used to replace an existing Panel in a Dashboard with a new provided Panel.
+
+.PARAMETER Panel
+A PowerGrafana.Panel that is the Panel we want to update, this can be retrieved with "Get-GrafanaPanel", then updated and then provided to this cmdlet to be reflected in Grafana.
+
+.PARAMETER Dashboard
+A PowerGrafana.Dashboard object where we will be replacing the panel.
+
+.EXAMPLE
+
+.NOTES
+
+.LINK
+Get-GrafanaPanel
+
+#>
 function Update-GrafanaDashboardPanel {
     [CmdletBinding()]
     param (
