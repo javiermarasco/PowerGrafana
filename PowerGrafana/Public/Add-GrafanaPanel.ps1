@@ -1,14 +1,10 @@
 <#
 
 .SYNOPSIS
-This cmdlet allows you to add a grafana panel to your existing dashboar.
-You can provide a list of Panels as parameter to add multiple panels at once.
+This cmdlet allows you to add a grafana panel to your existing dashboar. You can provide a list of Panels as parameter to add multiple panels at once.
 
 .DESCRIPTION
-This cmdlet needs to be called in order to add the panel[s] to the grafana dashboard, this is done in this way to allow the creation of multiple panels and then add all of them in a 
-single call to this cmdlet.
-Note that the dashboard needs to be an PowerGrafana.Dashboard object, it can be created using the 'New-GrafanaDashboard' or in case you already have a dashboard created
-a call to 'Get-GrafanaDashboard' will return the needed object.
+This cmdlet needs to be called in order to add the panel[s] to the grafana dashboard, this is done in this way to allow the creation of multiple panels and then add all of them in a  single call to this cmdlet. Note that the dashboard needs to be an PowerGrafana.Dashboard object, it can be created using the 'New-GrafanaDashboard' or in case you already have a dashboard created a call to 'Get-GrafanaDashboard' will return the needed object.
 
 
 .PARAMETER Dashboard
