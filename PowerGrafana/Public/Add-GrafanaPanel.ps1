@@ -34,10 +34,10 @@ Get-GrafanaDashboard
 New-GrafanaPanel
 
 #>
-function Add-GrafanaPanel{
+function Add-GrafanaPanel {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)]$Dashboard,
+        [Parameter(Mandatory = $true)]$Dashboard,
         [PSTypeName('PowerGrafana.Panel')][hashtable]$Panel = (New-GrafanaPanel)
     )
     $URI = Get-GrafanaURI
@@ -47,7 +47,7 @@ function Add-GrafanaPanel{
         $checkDashboardExist = Invoke-RestMethod -Method Get -Headers $Header -Uri $("$URI/api/dashboards/uid/" + $Dashboard.uid)
         if ($checkDashboardExist) {
             $MergedPanels = @()
-            if ($null -ne $checkDashboardExist.dashboard.panels){
+            if ($null -ne $checkDashboardExist.dashboard.panels) {
                 $MergedPanels += $checkDashboardExist.dashboard.panels
             }
             $MergedPanels += New-Object PSObject -property $Panel
@@ -60,7 +60,6 @@ function Add-GrafanaPanel{
                     timezone      = "browser"
                     schemaVersion = 26
                     version       = $checkDashboardExist.meta.version
-                    #refresh       = "25s"
                     panels        = @($MergedPanels)
                 }
                 folderId  = 0
@@ -69,7 +68,7 @@ function Add-GrafanaPanel{
             Invoke-RestMethod -Method Post -Headers $Header -Body $($body | convertto-json -Depth 10) -Uri "$URI/api/dashboards/db"
         }
     }
-        catch {
+    catch {
         throw $_ #$("Dashboard with uid {0} does not exist." -f $Dashboard.uid)
     }
 }

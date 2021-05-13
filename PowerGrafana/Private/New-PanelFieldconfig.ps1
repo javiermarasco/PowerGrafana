@@ -5,14 +5,14 @@ function New-PanelFieldconfig {
         },
         [string[]]$overrides = @()
     )
-    begin{
+    begin {
         $FieldConfig = @{
-            defaults = $defaults
+            defaults  = $defaults
             overrides = $overrides
         }
     }
-    process{
-        $FieldConfig.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelFieldconfig')
+    process {
+        $FieldConfig.PSObject.TypeNames.Insert(0, 'PowerGrafana.PanelFieldconfig')
         return $FieldConfig
     }
     

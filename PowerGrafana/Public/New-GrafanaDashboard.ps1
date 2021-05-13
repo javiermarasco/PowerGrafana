@@ -23,8 +23,8 @@ New-GrafanaDashboard -DashboardName "My new dashboard" -Tags @('Web','Azure','Pr
 function New-GrafanaDashboard {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)]$DashboardName,
-        [Parameter(Mandatory=$false)][string[]]$Tags
+        [Parameter(Mandatory = $true)]$DashboardName,
+        [Parameter(Mandatory = $false)][string[]]$Tags
     )
     $URI = Get-GrafanaURI
     $Header = New-GrafanaHeader
@@ -37,7 +37,6 @@ function New-GrafanaDashboard {
             timezone      = "browser"
             schemaVersion = 26
             version       = 0
-            #refresh       = "25s"
         }
         folderId  = 0
         overwrite = $false

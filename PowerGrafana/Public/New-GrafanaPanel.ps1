@@ -181,11 +181,6 @@ function New-GrafanaPanel {
     )
     begin {
         $Panel = @{
-            #h                = $h
-            #w                = $w
-            #x                = $x
-            #y                = $y
-            #alert           = $alert
             aliasColors     = $aliasColors
             bars            = $bars
             dashLength      = $dashLength
@@ -211,7 +206,6 @@ function New-GrafanaPanel {
             spaceLength     = $spaceLength
             stack           = $stack
             steppedLine     = $steppedLine
-            #targets         = $targets
             thresholds      = $thresholds
             timeFrom        = $timeFrom
             timeRegions     = $timeRegions

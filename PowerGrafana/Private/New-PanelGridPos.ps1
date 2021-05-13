@@ -5,7 +5,7 @@ function New-PanelGridPos {
         [int]$x = 0,
         [int]$y = 0
     )
-    begin{
+    begin {
         $GridPos = @{
             h = $h
             w = $w
@@ -13,8 +13,8 @@ function New-PanelGridPos {
             y = $y
         }
     }
-    process{
-        $GridPos.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelGridPos')
+    process {
+        $GridPos.PSObject.TypeNames.Insert(0, 'PowerGrafana.PanelGridPos')
         return $GridPos
     }
     

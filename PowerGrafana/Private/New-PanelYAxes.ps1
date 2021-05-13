@@ -7,18 +7,18 @@ function New-PanelYAxes {
         [pscustomobject]$min = $null,
         [bool]$show = $true
     )
-    begin{
+    begin {
         $PanelYAxes = @{
-            format = $format
-            label = $label
+            format  = $format
+            label   = $label
             logBase = $logBase
-            max = $max
-            min = $min
-            show = $show
+            max     = $max
+            min     = $min
+            show    = $show
         }
     }
-    process{
-        $PanelYAxes.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelYAxes')
+    process {
+        $PanelYAxes.PSObject.TypeNames.Insert(0, 'PowerGrafana.PanelYAxes')
         return $PanelYAxes
     }
     

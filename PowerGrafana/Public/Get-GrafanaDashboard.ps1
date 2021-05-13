@@ -19,7 +19,7 @@ Get-GrafanaDashboard -DashboardId usi13s
 #>
 function Get-GrafanaDashboard {
     param (
-        [Parameter(Mandatory=$false)]$DashboardId
+        [Parameter(Mandatory = $false)]$DashboardId
     )
     $URI = Get-GrafanaURI
     $Header = New-GrafanaHeader

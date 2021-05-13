@@ -6,17 +6,17 @@ function New-PanelXAxis {
         [bool]$show = $true,
         [string[]]$values = @()
     )
-    begin{
+    begin {
         $PanelXAxis = @{
             buckets = $buckets
-            mode = $mode
-            name = $name
-            show = $show
-            values = $values
+            mode    = $mode
+            name    = $name
+            show    = $show
+            values  = $values
         }
     }
-    process{
-        $PanelXAxis.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelXAxis')
+    process {
+        $PanelXAxis.PSObject.TypeNames.Insert(0, 'PowerGrafana.PanelXAxis')
         return $PanelXAxis
     }
     

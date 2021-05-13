@@ -3,14 +3,14 @@ function New-PanelYAxis {
         [bool]$align = $false,
         [pscustomobject]$alignLevel = $null
     )
-    begin{
+    begin {
         $PanelYAxis = @{
-            align = $align
+            align      = $align
             alignLevel = $alignLevel
         }
     }
-    process{
-        $PanelYAxis.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelYAxis')
+    process {
+        $PanelYAxis.PSObject.TypeNames.Insert(0, 'PowerGrafana.PanelYAxis')
         return $PanelYAxis
     }
     

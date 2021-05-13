@@ -21,7 +21,7 @@ Get-GrafanaDashboard
 function Remove-GrafanaDashboard {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)]$Dashboard
+        [Parameter(Mandatory = $true)]$Dashboard
     )
     $URI = Get-GrafanaURI
     $Header = New-GrafanaHeader

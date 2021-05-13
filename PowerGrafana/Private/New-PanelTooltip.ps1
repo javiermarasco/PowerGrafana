@@ -4,15 +4,15 @@ function New-PanelTooltip {
         [int]$sort = 0,
         [string]$value_type = "individual"
     )
-    begin{
+    begin {
         $PanelTooltip = @{
-            shared = $shared
-            sort = $sort
+            shared     = $shared
+            sort       = $sort
             value_type = $value_type
         }
     }
-    process{
-        $PanelTooltip.PSObject.TypeNames.Insert(0,'PowerGrafana.PanelTooltip')
+    process {
+        $PanelTooltip.PSObject.TypeNames.Insert(0, 'PowerGrafana.PanelTooltip')
         return $PanelTooltip
     }
     

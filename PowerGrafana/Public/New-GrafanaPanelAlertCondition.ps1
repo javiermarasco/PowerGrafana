@@ -68,7 +68,7 @@ function New-GrafanaPanelAlertCondition {
     }
 
     process {
-        $Condition.PSOBject.TypeNames.Insert(0,'PowerGrafana.PanelAlertCondition')
+        $Condition.PSOBject.TypeNames.Insert(0, 'PowerGrafana.PanelAlertCondition')
         return $Condition
     }
     

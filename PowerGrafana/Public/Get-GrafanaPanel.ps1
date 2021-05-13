@@ -33,23 +33,25 @@ Get-GrafanaPanel -PanelId 2 -DashboardId "u2isj3"
 function Get-GrafanaPanel {
 
     param (
-        [Parameter(Mandatory=$false)] [PSTypeName('PowerGrafana.Panel')] $Panel,
-        [Parameter(Mandatory=$false)] $PanelId,
-        [Parameter(Mandatory=$false)] $Dashboard,
-        [Parameter(Mandatory=$false)] $DashboardId
+        [Parameter(Mandatory = $false)] [PSTypeName('PowerGrafana.Panel')] $Panel,
+        [Parameter(Mandatory = $false)] $PanelId,
+        [Parameter(Mandatory = $false)] $Dashboard,
+        [Parameter(Mandatory = $false)] $DashboardId
     )
     $URI = Get-GrafanaURI
     $Header = New-GrafanaHeader
 
-    if ([string]::IsNullOrEmpty($Dashboard)){
+    if ([string]::IsNullOrEmpty($Dashboard)) {
         $QueryUri = $("$URI/api/dashboards/uid/" + $DashboardId)
-    }else{
-        $QueryUri =$("$URI/api/dashboards/uid/" + $Dashboard.uid)
+    }
+    else {
+        $QueryUri = $("$URI/api/dashboards/uid/" + $Dashboard.uid)
     }
 
-    if ([string]::IsNullOrEmpty($Panel)){
+    if ([string]::IsNullOrEmpty($Panel)) {
         $QueryPanelId = $PanelId
-    }else{
+    }
+    else {
         $QueryPanelId = $Panel.id
     }
     $RetrievedDashboard = Invoke-RestMethod -Method Get -Headers $Header -Uri $QueryUri

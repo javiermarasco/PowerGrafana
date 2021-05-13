@@ -13,7 +13,7 @@ function Get-NextAvailableRefId {
             return -1
         }
         else {
-            return $AZ[$AZ.indexof([char]$PanelsRefIds)+1]
+            return $AZ[$AZ.indexof([char]$PanelsRefIds) + 1]
         }
     }
     else {
