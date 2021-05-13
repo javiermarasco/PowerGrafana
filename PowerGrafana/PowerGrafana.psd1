@@ -12,7 +12,7 @@
 RootModule = 'PowerGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.4'
+ModuleVersion = '0.1.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -123,7 +123,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Added help information into all cmdlets'
+        ReleaseNotes = 'Help information is now added to all cmdlets, accessible using Get-Help, also removed a bunch of comments that were not needed anymore and slightly prettified the code.'
 
         # Prerelease string of this module
         # Prerelease = ''
